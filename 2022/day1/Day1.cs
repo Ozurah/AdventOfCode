@@ -3,8 +3,8 @@ using System.Linq;
 
 namespace AdventOfCode2022
 {
-    class Day1 {
-
+    class Day1
+    {
         private static List<List<int>> init()
         {
             String file = Program.inputPath + @"/day1/prob1.txt";
@@ -16,7 +16,6 @@ namespace AdventOfCode2022
 
             foreach (String line in lines)
             {
-
                 if (string.IsNullOrEmpty(line))
                 {
                     elfs.Add(calories);
@@ -28,6 +27,7 @@ namespace AdventOfCode2022
 
             return elfs;
         }
+
         public static void prob1()
         {
             var elfs = init();
@@ -40,7 +40,7 @@ namespace AdventOfCode2022
             var elfs = init();
 
             var maxs = elfs.Select(calories => calories.Sum()).OrderByDescending(score => score).Take(3);
-            
+
             // maxs.ToList().ForEach(Console.WriteLine);
 
             Console.WriteLine(maxs.Sum());
