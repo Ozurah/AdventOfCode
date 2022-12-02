@@ -7,7 +7,7 @@ namespace AdventOfCode2022
     {
         private static List<List<int>> init()
         {
-            String file = Program.inputPath + @"/day1/prob1.txt";
+            String file = Program.inputPath + @"/day1.txt";
             // readfile
             List<String> lines = System.IO.File.ReadAllLines(file).ToList();
 
