@@ -3,8 +3,9 @@ using System.Linq;
 
 namespace AdventOfCode2022
 {
-    class Program {    
-        public static string inputPath = @"./inputs/";     
+    class Program
+    {
+        public static string inputPath = @"./inputs/";
         static void Main(string[] args)
         {
             Console.WriteLine("======== Day 1 ========");
@@ -13,6 +14,11 @@ namespace AdventOfCode2022
             Console.WriteLine("--- Problem 2 ---");
             Day1.prob2();
 
+            Console.WriteLine("======== Day 2 ========");
+            Console.WriteLine("--- Problem 1 ---");
+            Day2.prob1();
+            Console.WriteLine("--- Problem 2 ---");
+            Day2.prob2();
         }
     }
 }
