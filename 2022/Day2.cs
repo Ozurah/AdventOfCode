@@ -56,8 +56,6 @@ namespace AdventOfCode2022
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="player1"></param>
-        /// <param name="player2"></param>
         /// <returns>Tuple : Opponent, My</returns>
         private static List<Tuple<Shape, Shape>> init()
         {
@@ -81,8 +79,6 @@ namespace AdventOfCode2022
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="player1"></param>
-        /// <param name="player2"></param>
         /// <returns>Tuple : Opponent, My</returns>
         private static List<Tuple<Shape, ScoreResult>> initProb2()
         {
