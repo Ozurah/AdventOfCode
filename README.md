@@ -15,6 +15,7 @@ Day | Stars
 ---|---
 1 | :star::star:
 2 | :star::star:
+3 | :star::star:
 
 :tada::confetti_ball::confetti_ball::tada:<br>
 :cocktail::cake::cake::tropical_drink:
