@@ -4,21 +4,23 @@ using System.Text.RegularExpressions;
 
 namespace AdventOfCode2022
 {
-    class Day5
+    class Day5 : IDay
     {
 
-        private static List<LinkedList<char>> stacks = new List<LinkedList<char>>();
+        private List<LinkedList<char>> stacks = new List<LinkedList<char>>();
         //nb to move, from, to
-        private static List<Tuple<int, int, int>> procedures = new List<Tuple<int, int, int>>();
+        private List<Tuple<int, int, int>> procedures = new List<Tuple<int, int, int>>();
         /// <summary>
         ///
         /// </summary>
         /// <returns>Tuple : backpack left, backpack right</returns>
-        private static void init()
+        private void init()
         {
             String file = Program.inputPath + @"/day5.txt";
             // file = Program.inputPath + @"/day5_simple.txt";
 
+            stacks = new List<LinkedList<char>>();
+            procedures = new List<Tuple<int, int, int>>();
             List<String> lines = System.IO.File.ReadAllLines(file).ToList();
 
             var backapcks = new List<Tuple<String, String>>();
@@ -51,7 +53,7 @@ namespace AdventOfCode2022
             }
         }
 
-        public static void prob1()
+        public void prob1()
         {
             init();
             foreach (var procedure in procedures)
@@ -72,9 +74,34 @@ namespace AdventOfCode2022
             Console.WriteLine();
         }
 
-        public static void prob2()
+        public void prob2()
         {
 
+            init();
+
+            foreach (var procedure in procedures)
+            {
+                // Could be simplified with list of list, but didn't want to change :')
+                // Using Stack to preserve order when readding on the other stack
+                Stack<char> temp = new Stack<char>();
+
+                for (int i = 0; i < procedure.Item1; i++)
+                {
+                    var item = stacks[procedure.Item2].Last();
+                    temp.Push(item);
+                    stacks[procedure.Item2].RemoveLast();
+                }
+
+                while (temp.Count > 0)
+                    stacks[procedure.Item3].AddLast(temp.Pop());
+            }
+
+            foreach (var stack in stacks)
+            {
+                if (stack.Count > 0)
+                    Console.Write(stack.Last());
+            }
+            Console.WriteLine();
         }
     }
 }

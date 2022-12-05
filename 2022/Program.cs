@@ -8,35 +8,43 @@ namespace AdventOfCode2022
         public static string inputPath = @"./inputs/";
         static void Main(string[] args)
         {
-            Console.WriteLine("======== Day 1 ========");
-            Console.WriteLine("--- Problem 1 ---");
-            Day1.prob1();
-            Console.WriteLine("--- Problem 2 ---");
-            Day1.prob2();
+            int runDay = 5;
 
-            Console.WriteLine("======== Day 2 ========");
-            Console.WriteLine("--- Problem 1 ---");
-            Day2.prob1();
-            Console.WriteLine("--- Problem 2 ---");
-            Day2.prob2();
+            Dictionary<int, IDay> days = new Dictionary<int, IDay>()
+            {
+                // { 1, new Day1() },
+                // { 2, new Day2() },
+                // { 3, new Day3() },
+                // { 4, new Day4() },
+                { 5, new Day5() },
+                // { 6, new Day6() },
+                // { 7, new Day7() },
+                // { 8, new Day8() },
+                // { 9, new Day9() },
+                // { 10, new Day10() },
+                // { 11, new Day11() },
+                // { 12, new Day12() },
+                // { 13, new Day13() },
+                // { 14, new Day14() },
+                // { 15, new Day15() },
+                // { 16, new Day16() },
+                // { 17, new Day17() },
+                // { 18, new Day18() },
+                // { 19, new Day19() },
+                // { 20, new Day20() },
+                // { 21, new Day21() },
+                // { 22, new Day22() },
+                // { 23, new Day23() },
+                // { 24, new Day24() },
+                // { 25, new Day25() },
+            };
 
-            Console.WriteLine("======== Day 3 ========");
-            Console.WriteLine("--- Problem 1 ---");
-            Day3.prob1();
-            Console.WriteLine("--- Problem 2 ---");
-            Day3.prob2();
 
-            Console.WriteLine("======== Day 4 ========");
+            Console.WriteLine("======== Day " + (runDay) + " ========");
             Console.WriteLine("--- Problem 1 ---");
-            // Day4.prob1();
+            days[runDay].prob1();
             Console.WriteLine("--- Problem 2 ---");
-            // Day4.prob2();
-            
-            Console.WriteLine("======== Day 5 ========");
-            Console.WriteLine("--- Problem 1 ---");
-            Day5.prob1();
-            Console.WriteLine("--- Problem 2 ---");
-            Day5.prob2();
+            days[runDay].prob2();
 
         }
     }
