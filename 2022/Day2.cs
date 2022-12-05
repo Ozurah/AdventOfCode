@@ -3,9 +3,8 @@ using System.Linq;
 
 namespace AdventOfCode2022
 {
-    class Day2
+    class Day2 : IDay
     {
-
         enum Shape
         {
             // play = score
@@ -22,14 +21,14 @@ namespace AdventOfCode2022
             Lose = 0,
         }
 
-        private static Dictionary<Shape, Shape> winAgainst = new Dictionary<Shape, Shape>()
+        private Dictionary<Shape, Shape> winAgainst = new Dictionary<Shape, Shape>()
         {
             { Shape.Rock, Shape.Scissors },
             { Shape.Paper, Shape.Rock },
             { Shape.Scissors, Shape.Paper },
         };
 
-        private static Dictionary<String, Shape> mapActionProb1 = new Dictionary<string, Shape>()
+        private Dictionary<String, Shape> mapActionProb1 = new Dictionary<string, Shape>()
         {
             { "A", Shape.Rock },
             { "B", Shape.Paper },
@@ -39,14 +38,14 @@ namespace AdventOfCode2022
             { "Z", Shape.Scissors },
         };
 
-        private static Dictionary<String, Shape> mapActionProb2 = new Dictionary<string, Shape>()
+        private Dictionary<String, Shape> mapActionProb2 = new Dictionary<string, Shape>()
         {
             { "A", Shape.Rock },
             { "B", Shape.Paper },
             { "C", Shape.Scissors },
         };
 
-        private static Dictionary<String, ScoreResult> mapResultProb2 = new Dictionary<string, ScoreResult>()
+        private Dictionary<String, ScoreResult> mapResultProb2 = new Dictionary<string, ScoreResult>()
         {
             { "X", ScoreResult.Lose },
             { "Y", ScoreResult.Draw },
@@ -57,7 +56,7 @@ namespace AdventOfCode2022
         /// 
         /// </summary>
         /// <returns>Tuple : Opponent, My</returns>
-        private static List<Tuple<Shape, Shape>> init()
+        private List<Tuple<Shape, Shape>> init()
         {
             String file = Program.inputPath + @"/day2.txt";
 
@@ -80,7 +79,7 @@ namespace AdventOfCode2022
         /// 
         /// </summary>
         /// <returns>Tuple : Opponent, My</returns>
-        private static List<Tuple<Shape, ScoreResult>> initProb2()
+        private List<Tuple<Shape, ScoreResult>> initProb2()
         {
             String file = Program.inputPath + @"/day2.txt";
 
@@ -99,7 +98,7 @@ namespace AdventOfCode2022
             return round;
         }
 
-        public static void prob1()
+        public void prob1()
         {
             var rounds = init();
 
@@ -119,7 +118,7 @@ namespace AdventOfCode2022
             Console.WriteLine(sum);
         }
 
-        public static void prob2()
+        public void prob2()
         {
             var rounds = initProb2();
 

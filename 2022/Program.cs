@@ -12,9 +12,9 @@ namespace AdventOfCode2022
 
             Dictionary<int, IDay> days = new Dictionary<int, IDay>()
             {
-                // { 1, new Day1() },
-                // { 2, new Day2() },
-                // { 3, new Day3() },
+                { 1, new Day1() },
+                { 2, new Day2() },
+                { 3, new Day3() },
                 // { 4, new Day4() },
                 { 5, new Day5() },
                 // { 6, new Day6() },

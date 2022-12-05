@@ -3,10 +3,10 @@ using System.Linq;
 
 namespace AdventOfCode2022
 {
-    class Day3
+    class Day3 : IDay
     {
 
-        private static int getPriority(char c)
+        private int getPriority(char c)
         {
             if (c >= 'a' && c <= 'z')
             {
@@ -26,7 +26,7 @@ namespace AdventOfCode2022
         /// 
         /// </summary>
         /// <returns>A list of distinct characters who is found in both strings</returns>
-        private static List<char> getCharInBoth(String str1, String str2, String? str3 = null)
+        private List<char> getCharInBoth(String str1, String str2, String? str3 = null)
         {
             var result = new List<char>();
             foreach (char c in str1)
@@ -44,7 +44,7 @@ namespace AdventOfCode2022
         ///
         /// </summary>
         /// <returns>Tuple : backpack left, backpack right</returns>
-        private static List<Tuple<String, String>> init()
+        private List<Tuple<String, String>> init()
         {
             String file = Program.inputPath + @"/day3.txt";
             // file = Program.inputPath + @"/day3_simple.txt";
@@ -65,7 +65,7 @@ namespace AdventOfCode2022
             return backapcks;
         }
 
-        public static void prob1()
+        public void prob1()
         {
             var backpacks = init();
 
@@ -78,7 +78,7 @@ namespace AdventOfCode2022
             Console.WriteLine(sumBadItem);
         }
 
-        public static void prob2()
+        public void prob2()
         {
             var backpacks = init();
 

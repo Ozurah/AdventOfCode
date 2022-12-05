@@ -3,9 +3,9 @@ using System.Linq;
 
 namespace AdventOfCode2022
 {
-    class Day1
+    class Day1 : IDay
     {
-        private static List<List<int>> init()
+        private List<List<int>> init()
         {
             String file = Program.inputPath + @"/day1.txt";
             // readfile
@@ -28,14 +28,14 @@ namespace AdventOfCode2022
             return elfs;
         }
 
-        public static void prob1()
+        public void prob1()
         {
             var elfs = init();
 
             Console.WriteLine(elfs.Max(calories => calories.Sum()));
         }
 
-        public static void prob2()
+        public void prob2()
         {
             var elfs = init();
 
