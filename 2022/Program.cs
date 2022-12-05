@@ -25,6 +25,19 @@ namespace AdventOfCode2022
             Day3.prob1();
             Console.WriteLine("--- Problem 2 ---");
             Day3.prob2();
+
+            Console.WriteLine("======== Day 4 ========");
+            Console.WriteLine("--- Problem 1 ---");
+            // Day4.prob1();
+            Console.WriteLine("--- Problem 2 ---");
+            // Day4.prob2();
+            
+            Console.WriteLine("======== Day 5 ========");
+            Console.WriteLine("--- Problem 1 ---");
+            Day5.prob1();
+            Console.WriteLine("--- Problem 2 ---");
+            Day5.prob2();
+
         }
     }
 }
