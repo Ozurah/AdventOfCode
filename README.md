@@ -11,7 +11,7 @@ Advent of code calandar resolution
 ## 2022 - C#
 https://adventofcode.com/2022/
 
-Day | Starsa
+Day | Stars
 ---|---
 1 | :star::star:
 2 | :star::star:
