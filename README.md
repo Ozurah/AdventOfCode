@@ -18,7 +18,7 @@ Day | Starsa
 3 | :star::star:
 4 | :snowflake:
 5 | :star::star:
-6 | :star:
+6 | :star::star:
 
 
 :tada::confetti_ball::confetti_ball::tada:<br>

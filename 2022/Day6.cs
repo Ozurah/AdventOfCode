@@ -29,7 +29,7 @@ namespace AdventOfCode2022
         {
             var streams = init();
 
-            int markerSize = 4;
+            int markerSize = 4; // start-of-packet marker
             int markerIndex = 0;
 
             foreach (var stream in streams)
@@ -50,9 +50,25 @@ namespace AdventOfCode2022
 
         public void prob2()
         {
+            var streams = init();
 
-            init();
+            int markerSize = 14; // start-of-message marker
+            int markerIndex = 0;
 
+            foreach (var stream in streams)
+            {
+                for (int i = 0; i < stream.Length - markerSize; i++)
+                {
+                    var distinctPart = stream.Substring(i, markerSize).Distinct().ToList();
+                    if (distinctPart.Count == markerSize)
+                    {
+                        markerIndex = i + markerSize;
+                        break;
+                    }
+                }
+
+                Console.WriteLine(markerIndex);
+            }
         }
     }
 }
