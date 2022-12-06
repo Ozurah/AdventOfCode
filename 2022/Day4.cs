@@ -64,9 +64,22 @@ namespace AdventOfCode2022
 
         public void prob2()
         {
+            var groups = init();
 
-            init();
+            int overlap = 0;
+            foreach (var group in groups)
+            {
+                var member1 = group[0];
+                var member2 = group[1];
 
+                var intersection = member1.Intersect(member2).ToList();
+                if (intersection.Count > 0)
+                {
+                    overlap++;
+                }
+            }
+
+            Console.WriteLine(overlap);
         }
     }
 }

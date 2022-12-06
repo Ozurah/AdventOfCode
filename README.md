@@ -16,7 +16,7 @@ Day | Stars
 1 | :star::star:
 2 | :star::star:
 3 | :star::star:
-4 | :snowflake:
+4 | :star::star:
 5 | :star::star:
 6 | :star::star:
 
